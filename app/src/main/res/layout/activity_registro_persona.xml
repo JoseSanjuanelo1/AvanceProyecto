@@ -66,15 +66,36 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="@string/edad"
-                    android:inputType="textPersonName" />
+                    android:inputType="number" />
 
-                <EditText
-                    android:id="@+id/txtSexo"
+                <TextView
+                    android:id="@+id/textView58"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="@string/sexo"
-                    android:inputType="textPersonName" />
+                    android:layout_height="36dp"
+                    android:text="@string/sexo"
+                    android:textSize="18sp" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.04"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/r1Masculino"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:text="@string/sexo1" />
+
+                    <RadioButton
+                        android:id="@+id/r2Femenino"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/sexo2" />
+                </RadioGroup>
 
                 <Button
                     android:id="@+id/button"

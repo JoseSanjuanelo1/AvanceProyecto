@@ -8,12 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 public class RegistroPersona extends AppCompatActivity {
 
-    private EditText cajaNombre, cajaApellido, cajaUsuario, cajaContrasenia, cajaEdad, cajaSexo;
+    private EditText cajaNombre, cajaApellido, cajaUsuario, cajaContrasenia, cajaEdad;
     private TextView id;
+    private RadioButton r1, r2;
     private ArrayAdapter<Registro> r;
     private Resources res;
     private SQLiteDatabase db;
@@ -31,7 +33,8 @@ public class RegistroPersona extends AppCompatActivity {
         cajaUsuario = (EditText)findViewById(R.id.txtUsuarioRegistro);
         cajaContrasenia = (EditText)findViewById(R.id.txtContraseniaRegistro);
         cajaEdad = (EditText)findViewById(R.id.txtEdad);
-        cajaSexo = (EditText)findViewById(R.id.txtSexo);
+        r1 = (RadioButton)findViewById(R.id.r1Masculino);
+        r2 = (RadioButton)findViewById(R.id.r2Femenino);
         //id.setText(""+1);
         id.setText("ID: "+idYa());
     }
@@ -53,7 +56,7 @@ public class RegistroPersona extends AppCompatActivity {
 
     public void registrar(View v){
         if (validar()) {
-            String  nombre, apellido, usuario, contrasenia, edad, sexo;
+            String  nombre, apellido, usuario, contrasenia, edad, sexo="";
 
 
             nombre = cajaNombre.getText().toString();
@@ -61,7 +64,15 @@ public class RegistroPersona extends AppCompatActivity {
             usuario = cajaUsuario.getText().toString();
             contrasenia = cajaContrasenia.getText().toString();
             edad = cajaEdad.getText().toString();
-            sexo = cajaSexo.getText().toString();
+            if (r1.isChecked()){
+                sexo = res.getString(R.string.sexo1);
+            }else{
+                if (r2.isChecked()) {
+                    sexo = res.getString(R.string.sexo2);
+                }
+            }
+
+
 
             idAument=idYa();
 
@@ -101,11 +112,6 @@ public class RegistroPersona extends AppCompatActivity {
             cajaEdad.setError(getResources().getString(R.string.error_7));
             return false;
         }
-        if (cajaSexo.getText().toString().isEmpty() ){
-            //Toast.makeText(getApplicationContext(), "Digite por favor el nombre" , Toast.LENGTH_SHORT).show();
-            cajaSexo.setError(getResources().getString(R.string.error_8));
-            return false;
-        }
 
         return true;
     }
@@ -115,8 +121,7 @@ public class RegistroPersona extends AppCompatActivity {
         cajaApellido.setText("");
         cajaUsuario.setText("");
         cajaContrasenia.setText("");
-        cajaEdad.setText("");
-        cajaSexo.setText("");
+        cajaEdad.setText("");;
         cajaNombre.requestFocus();
     }
 }

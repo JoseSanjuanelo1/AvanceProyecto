@@ -35,7 +35,7 @@
     <string name="error_3">No se guardo su aporte</string>
     <string name="thinicio">Inicio</string>
     <string name="thifotos">Fotos</string>
-    <string name="thintempo">Temporada</string>
+    <string name="thintempo">Usuarios</string>
     <string name="thinciudad">Ciudades</string>
     <string name="thbhAyuda">Ayudas y Puntuaciones</string>
     <string name="tbhUsuarios">Usuarios</string>
@@ -85,6 +85,8 @@
     <string name="listarCiudades">Listar Ciudades</string>
     <string name="mensajeSubida1">Subiendo archivo</string>
     <string name="mensajeSubida2">Cargando...</string>
+    <string name="sexo1">Masculino</string>
+    <string name="sexo2">Femenino</string>
     <string-array name="deptos">
         <item>@string/antioquia</item>
         <item>@string/atlantico</item>

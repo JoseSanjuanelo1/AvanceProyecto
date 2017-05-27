@@ -119,11 +119,6 @@ public class RegistroCiudades extends AppCompatActivity {
         }
     }
 
-    public int aleatorio(){
-        int fotos[] = {R.drawable.images};
-        int numero = 0;
-        return  fotos[numero];
-    }
 
     public void limpiar (){
             cajaCiudad.setText("");
